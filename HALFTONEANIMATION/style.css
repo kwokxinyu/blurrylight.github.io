@@ -1,0 +1,75 @@
+@font-face {
+    font-family: 'DotFont';
+    src: url(/assets/Dot.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'DotSpot';
+    src: url(/assets/DotSpot-Regular.ttf) format('truetype');
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3d3b38;
+    background-image: url(/assets/ASTIG_SPREAD_BACKGROUND_NOGRADIENT.png);
+    overflow: hidden;
+  } 
+  .bg {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    width: 200%;
+    height: 200vh;
+    background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+    background-repeat: repeat;
+    animation: bg-animation .2s infinite;
+    opacity: .9;
+    visibility: visible;
+  }
+  
+  .container {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(67, 10px);
+    grid-template-rows: repeat(60, 10px);
+    gap: 10px;
+    width: 1350px;
+    height: 700px;
+    box-sizing: border-box; 
+  }
+  .dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 1);
+    transform: scale(3);
+    transition: transform 0.5s ease-in-out;
+  }
+  .text {
+    position: absolute;
+    color:  rgba(255, 255, 255, 1);
+    font-family: 'DotSpot';
+    font-size: 190px;
+    text-align: center;
+  }
+  
+  @keyframes bg-animation {
+    0% { transform: translate(0,0) }
+    10% { transform: translate(-5%,-5%) }
+    20% { transform: translate(-10%,5%) }
+    30% { transform: translate(5%,-10%) }
+    40% { transform: translate(-5%,15%) }
+    50% { transform: translate(-10%,5%) }
+    60% { transform: translate(15%,0) }
+    70% { transform: translate(0,10%) }
+    80% { transform: translate(-15%,0) }
+    90% { transform: translate(10%,5%) }
+    100% { transform: translate(5%,0) }
+}
